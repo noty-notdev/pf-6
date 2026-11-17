@@ -6,7 +6,7 @@
 # Evitar extensiones del compilador, solo estándar.
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Utilidades para el editor y el .so/.dll a generar.

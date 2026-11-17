@@ -11,7 +11,7 @@ else()
 endif()
 
 # Función para configurar los tests.
-function(setupTest, TEST_NAME CXX_SOURCE)
+function(setup_test TEST_NAME CXX_SOURCE)
 	add_executable(${TEST_NAME} ${CXX_SOURCE})
 	
 	target_link_libraries(${TEST_NAME} PRIVATE ${PROJECT_NAME} test_config)

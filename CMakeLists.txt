@@ -12,5 +12,5 @@ include(cmake/Testing.cmake)
 
 # Añadir subdirectorios para la compilación del proyecto.
 add_subdirectory(src)
-#add_subdirectory(tests)
+add_subdirectory(tests)
 

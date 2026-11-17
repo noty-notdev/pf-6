@@ -60,6 +60,25 @@ void notPacker::decode(std::istream &input, std::ostream &output) {
 }
 
 
+std::string notPacker::encode(std::istream &input) {
+	std::ostringstream output;
+
+	// Codificar flujo.
+	encode(input, output);
+
+	return output.str();
+}
+
+std::string notPacker::decode(std::istream &input) {
+	std::ostringstream output;
+
+	// Codificar flujo.
+	decode(input, output);
+
+	return output.str();
+}
+
+
 std::string notPacker::encode(std::string &data) {
 	// Convertir el texto en un flujo de datos.
 	std::istringstream input(data);

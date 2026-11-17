@@ -8,8 +8,10 @@ using namespace huffman;
 void HuffmanTree::generateCodes(Node* current, std::string code) {
 	if(!current) return;
 
-	if(current->isLeaf())
+	if(current->isLeaf()) {
 		symbolCodes[current->symbol] = code.empty() ? "0" : code;
+		return;
+	}
 
 	generateCodes(current->left, code + "0");
 	generateCodes(current->right, code + "1");

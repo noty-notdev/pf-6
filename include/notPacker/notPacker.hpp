@@ -19,6 +19,10 @@ namespace huffman {
 		/* Compresión y descopresión para flujos de datos. */
 		void encode(std::istream& input, std::ostream& output);
 		void decode(std::istream& input, std::ostream& output);
+	
+		/* Compresión y descompresión para flujos */
+		std::string encode(std::istream& input);
+		std::string decode(std::istream& input);
 
 		/* Compresión y descompresión para cadenas. */
 		std::string encode(std::string& data);

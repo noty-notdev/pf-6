@@ -2,9 +2,5 @@
 # Ignorar el directorio de construcción de CMake.
 build/
 
-# Ignorar ejecutables del directorio <tests>.
-tests/*
-!tests/*/
-!tests/*.*
-tests/*.exe
+inTest
 
