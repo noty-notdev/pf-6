@@ -42,8 +42,8 @@ namespace huffman {
 		}
 
 		/// Devuelve el código del símbolo c.
-		std::string getCode(std::uint8_t s) const {
-			return symbolCodes.at(s);
+		std::string getCode(std::uint8_t symbol) const {
+			return symbolCodes.at(symbol);
 		}
 	};
 }
