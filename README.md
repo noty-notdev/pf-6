@@ -131,12 +131,18 @@ con la cadena `"aaaaaaaaXaaaaaaaa0aaaaaaaa&"`.
 ---
 
 ## Análisis de los resultados
-Alvaro :p
+
+Al ejecutar el programa con la cadena de prueba `"aaaaaaaaXaaaaaaaa0aaaaaaaa&"` (compuesta por 27 caracteres en total), se observa de forma clara la eficiencia de la codificación de longitud variable frente a la representación estándar de tamaño fijo (ASCII de 8 bits por carácter):
+
+* **Reducción significativa de espacio:** Sin compresión, la cadena requiere $27 \times 8 = 216\text{ bits}$. Al aplicar el algoritmo de Huffman, el tamaño se reduce a **32 bits**, logrando un **ahorro del 85.18%** en el espacio necesario para almacenar la información.
+* **Relación directa entre frecuencia y longitud de código:** El carácter `'a'`, que aparece 24 veces (representando el 88.8% del mensaje), quedó ubicado a solo un nivel de la raíz, recibiendo un código de **1 bit** (`1`). En contraste, los caracteres poco frecuentes (`'X'`, `'0'`, `'&'`, con frecuencia 1) quedaron en los niveles más profundos del árbol, recibiendo códigos de 2 y 3 bits.
+* **Garantía de decodificación sin ambigüedad:** Al quedar todos los símbolos ubicados exclusivamente en los nodos hoja, ningún código binario generado es prefijo de otro. Esto permite leer la secuencia comprimida de 32 bits de manera continua sin necesidad de delimitadores entre caracteres y recuperar el mensaje original sin pérdida de datos.
+* **Dependencia de la redundancia:** El alto porcentaje de compresión obtenido en este caso se debe al fuerte desbalance en las frecuencias de los símbolos. Si se introdujera una cadena donde todos los caracteres tuvieran frecuencias iguales o muy similares, el árbol resultaría mucho más balanceado y el ahorro de bits disminuiría considerablemente.
 
 ---
 
 ## Conclusiones
-Alvaro :p
+En este proyecto final, realmente pienso que todo lo que aprendí en el curso se junto literalmente, y eso fue un pequeño problema, ya que la compresión Huffman se trata de integrar varias estructuras de datos en un mismo flujo, especialmente entender cómo el Min-Heap va extrayendo y reinsertando nodos internos dinámicamente mientras se arma el árbol binario. Algo que si me quedó fue que la eficiencia del algoritmo no radica únicamente en que se reduzca el tamaño de los archivos, sino en hacerlo sin pérdida de datos y garantizando códigos libres de prefijos que permiten reconstruir el mensaje original con exactitud. Al final pues era lo que se buscaba y me gustó que los objetivos se cumplieran, y sobre todo hizo que la frase "when one teaches, two learn", ya que al estar en constante investigación, viendo ejemplos y videos sobre el tema, puedo explicar el paso a paso e implementación de este algoritmo.
 
 ---
 
